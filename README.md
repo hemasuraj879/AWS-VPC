@@ -57,7 +57,7 @@ No modules.
 | <a name="input_private_cidr"></a> [private\_cidr](#input\_private\_cidr) | Provide cidr range for private subnets | `any` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Provide project name | `string` | `""` | no |
 | <a name="input_public_cidr"></a> [public\_cidr](#input\_public\_cidr) | Provide cidr range for public subnets | `any` | n/a | yes |
-| <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | Specifies the number of days you want to retain log events in the specified log group | `number` | `""` | no |
+| <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | Specifies the number of days you want to retain log events in the specified log group | `number` | `0` | no |
 | <a name="input_skip_destroy"></a> [skip\_destroy](#input\_skip\_destroy) | Set to true if you do not wish the log group and to be deleted at destroy time, and instead just remove the log group from the Terraform state. | `bool` | `false` | no |
 | <a name="input_traffic_type"></a> [traffic\_type](#input\_traffic\_type) | The type of traffic to capture | `string` | n/a | yes |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | Provide vpc cidr value | `any` | n/a | yes |

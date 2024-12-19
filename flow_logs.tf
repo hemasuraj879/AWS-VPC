@@ -1,5 +1,5 @@
 resource "aws_flow_log" "vpc_flow_logs" {
-  iam_role_arn    = aws_iam_role.example.arn
+  iam_role_arn    = aws_iam_role.vpc_flow.arn
   log_destination = aws_cloudwatch_log_group.vpx_flow_logs.arn
   traffic_type    = var.traffic_type
   vpc_id          = var.vpc_id
