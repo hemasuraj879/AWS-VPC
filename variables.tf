@@ -77,10 +77,12 @@ variable "retention_in_days" {
 variable "traffic_type" {
   type = string
   description = "The type of traffic to capture"
+  default = "ALL"
 }
 
 variable "vpc_id" {
   type = string
   description = "VPC ID to attach to"
+  default = ""
 }
 
