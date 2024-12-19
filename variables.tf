@@ -71,7 +71,7 @@ variable "skip_destroy" {
 variable "retention_in_days" {
   type = number
   description = " Specifies the number of days you want to retain log events in the specified log group"
-  default = ""
+  default = 0
 }
 
 variable "traffic_type" {
