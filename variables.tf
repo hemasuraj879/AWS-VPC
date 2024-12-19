@@ -54,5 +54,33 @@ variable "peering_reqq" {
   default = false
 }
 
+#VPC FLOW LOGS
 
+variable "is_flow_log_req" {
+  type = bool
+  description = "Please set to true if flow logs required"
+  default = false
+}
+
+variable "skip_destroy" {
+  type = bool
+  description = "Set to true if you do not wish the log group and to be deleted at destroy time, and instead just remove the log group from the Terraform state."
+  default = false
+}
+
+variable "retention_in_days" {
+  type = number
+  description = " Specifies the number of days you want to retain log events in the specified log group"
+  default = ""
+}
+
+variable "traffic_type" {
+  type = string
+  description = "The type of traffic to capture"
+}
+
+variable "vpc_id" {
+  type = string
+  description = "VPC ID to attach to"
+}
 
