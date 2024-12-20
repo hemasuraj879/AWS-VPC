@@ -1,7 +1,7 @@
 resource "aws_flow_log" "vpc_flow_logs" {
   count = var.is_flow_log_req ? 1 : 0
-  iam_role_arn    = aws_iam_role.vpc_flow.arn
-  log_destination = aws_cloudwatch_log_group.vpx_flow_logs.arn
+  iam_role_arn    = aws_iam_role.vpc_flow[count.index].arn
+  log_destination = aws_cloudwatch_log_group.vpx_flow_logs[count.index].arn
   traffic_type    = var.traffic_type
   vpc_id          = var.vpc_id
 }
@@ -29,6 +29,6 @@ resource "aws_iam_role" "vpc_flow" {
 resource "aws_iam_role_policy" "vpc_flow" {
   count = var.is_flow_log_req ? 1 : 0
   name   = "${var.project_name}-vpc_flow"
-  role   = aws_iam_role.vpc_flow.id
+  role   = aws_iam_role.vpc_flow[count.index].id
   policy = data.aws_iam_policy_document.example.json
 }
